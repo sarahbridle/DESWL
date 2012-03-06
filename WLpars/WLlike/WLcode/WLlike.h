@@ -22,10 +22,11 @@ typedef struct WL_nuisance_params {
  * These might be the actual observations, or a set of predictions for the observations
 **/
 typedef struct WL_data {
-	unsigned long ntomo; /**< The number of tomographic bins */
-	unsigned long nscale; /**< The number of data points per z bin e.g. the number of theta values or number of ell values*/
+	int n_tomo; /**< The number of tomographic bins */
+	int n_scale; /**< The number of data points per z bin e.g. the number of theta values or number of ell values*/
+	int n; /**< The number of values in data */
+	float *scale_values; /**< A pointer to the abscissa of the scale values e.g. the theta values or ell values */
 	float *data; /**< The main pointer to the data */
-	float **scale_values_i; /**< An array of pointers to the abscissa of the data points in each z bin e.g. the theta values or ell values */
 } WL_data_observed;
 
 /**

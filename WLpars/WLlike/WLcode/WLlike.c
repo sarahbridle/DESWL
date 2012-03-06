@@ -6,7 +6,6 @@ This is currently a tidied up paste of the pseudo-code and some of the pseudo-he
 This might all be re-written in another language, format etc etc depending on discussion at the telecon.
 */
 
-
 /**
  * Compute WL likelihood from basic cosmological functions, nuisance parameters and observations 
 **/
@@ -106,6 +105,57 @@ WL_data * WL_compute_statistics_clean(matter_statistics_of_k_z * total_matter_st
 }
 
 // Still to be written!!!
+// WL_nuisance_params * WL_nuisance_params_trial = WL_nuisance_params_create();
+
+/** 
+ * Create an array of zeros in the shape of the WL_data 
+**/
+WL_data * WL_data_create(int n_tomo, int n_scale) {
+	
+	// Create space for the WL data structure. Nothing is initialised yet.
+	int n = n_tomo * n_scale;
+	WL_data * WL_data_dummy = (WL_data*)malloc(sizeof(WL_data));
+
+	// Check for allocation error. This amount is so small that it is unlikely to be an out-of-mem error.
+	if (!WL_data_dummy) return NULL;
+	
+	// Set up main data buffer and dimensions 
+	WL_data->n = n;
+	WL_data->n_tomo = n_tomo;
+	WL_data->n_scale = n_scale;
+	WL_data->scale_values = (float*)malloc(sizeof(float)*n_scale);
+	WL_data->data = (float*)malloc(sizeof(float)*n);
+	
+	// Check for memory errors. Out-of-memory error is possible here.
+	if (!WL_data->scale_values){
+		free(WL_data_dummy);
+		return NULL;
+	}
+	if (!WL_data->data){
+		free(WL_data_dummy);
+		return NULL;
+	}
+	
+	// Set all values to zero
+	for(int p=0;p<WL_data->n_scale;p++)	WL_data->scale_values[p]=0.0;
+	for(int p=0;p<WL_data->n;p++) WL_data->data[p]=0.0;
+	
+	// Tidy up 
+	return WL_data_dummy;
+};
+
+// Still to be written!!!
+//WL_data * WL_data_observed = WL_data_read_fits(WL_data_file);
+
+// Still to be written!!!
+//WL_data_window_fns * WL_data_window_fns_used = WL_data_window_fns_read_fits(WL_windows_file);
+
+// Still to be written!!!
+//WL_covmat * WL_covmat_used = WL_covmat_read_fits(WL_covmat_file);	
+
+
+
+// Still to be written!!!
 // Separate out the WL nuisance parameters into different types
 //[baryon_params, photoz_unc_params, IA_params, shear_calib_params] = WL_parse_nuisance_params(WL_nuisance_params);
 
@@ -117,22 +167,4 @@ WL_data * WL_compute_statistics_clean(matter_statistics_of_k_z * total_matter_st
 // Convert from Cls to whatever 2pt function is being used by weighting the Cls by one window function per data point
 //WL_shear2pt_clean = WL_Cls_to_shear2pt(WL_Cls_clean, WL_data_window_fns);
 
-/** 
- * Create an array of zeros in the shape of the WL_data 
-**/
-WL_data * WL_data_create() {
-// to be written!!!	
-};
-
-// Still to be written!!!
-// WL_nuisance_params * WL_nuisance_params_trial = WL_nuisance_params_create();
-
-// Still to be written!!!
-// WL_data_window_fns * WL_data_window_fns_used = WL_data_window_fns_create();
-
-// Still to be written!!!
-// WL_data * WL_data_observed = WL_data_create();
-
-// Still to be written!!!
-// WL_covmat * WL_covmat_used = WL_covmat_create();	
 
