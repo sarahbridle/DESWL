@@ -53,6 +53,20 @@ typedef struct cosmological_params {
 	// Still to be written!!!
 	// total_PkNL_of_k_z = parse_matter_statistics(total_matter_statistics_of_k_z);
 
+// Still to be written!!!
+// matter_statistics_of_k_z * dark_matter_statistics_of_k_z = matter_statistics_of_k_z_create(nk_matter, nz_matter);
+
+// Still to be written!!!
+//fn_of_z1_z2 * DA_of_z1_z2 = fn_of_z1_z2_create(nz_DA, nz_DA);
+
+// Still to be written!!!
+//n_of_z_i * n_of_z_i_fid = n_of_z_i_create(n_tomo, nz_n_of_z); 
+
+// Still to be written!!!
+//cosmological_params * cosmological_params_trial = cosmological_params_create();
+
+
+
 
 
 

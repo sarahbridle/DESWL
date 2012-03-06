@@ -109,18 +109,30 @@ WL_data * WL_compute_statistics_clean(matter_statistics_of_k_z * total_matter_st
 // Separate out the WL nuisance parameters into different types
 //[baryon_params, photoz_unc_params, IA_params, shear_calib_params] = WL_parse_nuisance_params(WL_nuisance_params);
 
-	// Still to be written!!!
-	// Calculate lensing Cls from the matter power spectrum provided 
-	//WL_Cls_clean = WL_compute_Cls_clean(total_PkNL_of_k_z, DA_of_z1_z2, n_of_z_i_unc);
+// Still to be written!!!
+// Calculate lensing Cls from the matter power spectrum provided 
+//WL_Cls_clean = WL_compute_Cls_clean(total_PkNL_of_k_z, DA_of_z1_z2, n_of_z_i_unc);
 
-	// Still to be written!!!
-	// Convert from Cls to whatever 2pt function is being used by weighting the Cls by one window function per data point
-	//WL_shear2pt_clean = WL_Cls_to_shear2pt(WL_Cls_clean, WL_data_window_fns);
+// Still to be written!!!
+// Convert from Cls to whatever 2pt function is being used by weighting the Cls by one window function per data point
+//WL_shear2pt_clean = WL_Cls_to_shear2pt(WL_Cls_clean, WL_data_window_fns);
 
 /** 
  * Create an array of zeros in the shape of the WL_data 
 **/
 WL_data * WL_data_create() {
-	
-	
+// to be written!!!	
 };
+
+// Still to be written!!!
+// WL_nuisance_params * WL_nuisance_params_trial = WL_nuisance_params_create();
+
+// Still to be written!!!
+// WL_data_window_fns * WL_data_window_fns_used = WL_data_window_fns_create();
+
+// Still to be written!!!
+// WL_data * WL_data_observed = WL_data_create();
+
+// Still to be written!!!
+// WL_covmat * WL_covmat_used = WL_covmat_create();	
+
